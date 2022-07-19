@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 1 js</title>
+</head>
+<body>
+    <p>Vamos calcular sua média</p>
+    <p>informe quantas notas você tem</p>
+    <input type="number" min="1" id="qtnotas-el" required>
+    <button id="btnnotas-el">Pronto!</button>
+    
+    <p id="notas-el"></p>
+    
+    <p id="media-el"></p>
+
+    <!-- daqui pra baixo é script -->
+
+    <script>
+        const btnNotasEl = document.getElementById('btnnotas-el')
+        let notasEl = document.getElementById('notas-el')
+        let mediaEl = document.getElementById('media-el')
+        let media = 0
+        let notas = []
+        btnNotasEl.addEventListener("click",function(){
+            let qtNotasEl = document.getElementById('qtnotas-el').value
+            btnNotasEl.remove()
+            notasEl.innerHTML = `
+            <p>agora informe suas notas </p> 
+            `
+        for (let i = 0; i<qtNotasEl; i++) {
+            notasEl.innerHTML += `
+            <input type="number" min="1" max="10" id="nota${i}">
+            `
+        }
+        
+            notasEl.innerHTML += `<button id="btnmedia-el">Pronto!</button>`
+            let btnMediaEl = document.getElementById('btnmedia-el')
+        btnMediaEl.addEventListener("click",function(){
+                btnMediaEl.remove()
+                for(let i = 0; i<qtNotasEl; i++) {
+                    notas[i] = document.getElementById("nota"+i).value
+                    media += parseInt(notas[i])
+                }
+                media /= notas.length
+                mediaEl.innerText = `A sua média é ${media}`
+                if (media >= 7){
+                    mediaEl.innerHTML += `<br><span style="color:lightgreen; background-color:green;">Parabéns!! você passou!</span>`
+                }   else {
+                    mediaEl.innerHTML += `<br><span style="color:red; background-color:black;">Tente novamente... você não passou</span>`
+                }
+                
+        })
+        })
+        
+            
+            
+    </script>
+</body>
+</html>

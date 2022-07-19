@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 1 js</title>
+</head>
+<body>
+    <p id="nome-el">vou mostrar seu nome</p>
+    <button id="btn-el">clique aqui</button>
+
+    <!-- daqui pra baixo é script -->
+
+    <script>
+        let nomeEl = document.getElementById('nome-el')
+        let btnEl = document.getElementById('btn-el')
+        var nome = prompt('qual o seu nome?')
+        let cont = 0
+        btnEl.addEventListener("click",function(){
+            cont += 1
+            nomeEl.innerText = cont
+            prompt("você tem problemas?")
+            if (cont <= 1) {
+                confirm("então você clicou " + cont + " vez?")
+            } 
+            else {
+                confirm("então você clicou " + cont + " vezes?")
+            }
+            
+        })
+        alert()
+    </script>
+</body>
+</html>

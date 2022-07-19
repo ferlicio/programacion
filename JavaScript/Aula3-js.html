@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>o    </title>
+</head>
+<body>
+    <p>olá meu parceiro</p>
+    <p>vamos fazer a tabuada?</p>
+    <button id="tbstart-El">pra já!</button>
+    <p id="tabuada-El"></p>
+
+
+    <script>
+        tbstartEl = document.getElementById("tbstart-El")
+        tabuadaEl = document.getElementById("tabuada-El")
+        tbstartEl.addEventListener("click", function() {
+            let number = parseFloat(prompt("qual vai ser o numero que vamos usar?"))
+                while (number == 0) {
+                number = parseInt(prompt("Não serve, toda multiplicação por 0 é igual a 0! escolha outro"))
+                
+            }
+            for (let i = 0; i <=1000; i++) {
+                result = number*i
+            document.write(`
+            <p>${number} x ${i} = ${result}</p>
+            `)
+            }
+        })
+    </script>
+
+</body>
+</html>

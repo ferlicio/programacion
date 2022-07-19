@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baskhara</title>
+</head>
+<body>
+    <p>calculo de baskhara</p>
+    <script>
+        alert("vamos calcular os valores de uma função do segundo grau")
+        let a = prompt('digite o valor de a') 
+        let b = prompt('digite o valor de b') 
+        let c = prompt('digite o valor de c') 
+        baskhara(a,b,c)
+
+        function baskhara(a, b, c){
+            document.write(`${a}x² + ${b}x + ${c} = 0<br>`)
+            document.write(`delta = b² - 4.a.c<br>`)
+            document.write(`delta = ${b}² - 4.${a}.${c}<br>`)
+            document.write(`delta = ${b**2} - (${4*a*c})<br>`)
+            document.write(`delta = ${(b**2) - (4*a*c)}<br>`)
+            let delta = (b**2) - (4*a*c)
+            
+            document.write(`<br><br>x = (-b +- √Delta)/2a`)
+            document.write(`<br>x = (-(${b}) +- √${delta})/2.${a}`)
+            document.write(`<br>x = (-(${b}) +- ${delta**(1/2)})/${2*a}`)
+            if(delta < 0) {
+                document.write(`<br>x¹ = (${(-b + (delta**(1/2)))/(2*a)})`)
+            } else {
+                document.write(`<br>x¹ = (${(-b + (delta**(1/2)))/(2*a)})`)
+                document.write(`<br>x² = (${(-b - (delta**(1/2)))/(2*a)})`)
+            }
+        }
+    </script>
+    
+</body>
+</html>

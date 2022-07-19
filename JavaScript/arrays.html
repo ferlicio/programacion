@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="teste"></p>
+
+    <script>
+        let display = document.getElementById("teste")
+        const notas = []
+        let media = 0
+        let qtdnotas = parseInt(prompt("qual a quantidade de notas?"))
+
+        for (let i = 0; i < qtdnotas; i++) {
+            notas.push(parseInt(prompt(`informe a ${i+1}ª nota`)))
+            media += notas[i]
+            console.log(media)
+        }
+        media /= qtdnotas
+        display.innerText = media
+
+    </script>
+
+</body>
+</html>
